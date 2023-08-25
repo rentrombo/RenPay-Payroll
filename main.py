@@ -4,7 +4,7 @@ import paygroup
 #input of pay date
 print('Welcome to RenPay\nPress enter to begin')
 input()
-print('Enter a pay date(mm/dd/yyyy: ')
+print('Enter a pay date(mm/dd/yyyy): ')
 pay_date=input()
 #input of employee number
 print('Enter the employee identifier number: ')
@@ -25,17 +25,18 @@ else:
 #calc hours
 reg_pay = float
 ot_pay=float
+full_pay=float
 if hours<40:
-    reg_pay= 20 * hours
+    reg_pay= 20.00 * hours
 
 #calc ot hours
 else:
-    reg_pay= 800
-    ot_pay = (hours-40)*30
+    reg_pay= 800.00
+    ot_pay = (hours-40)*30.00
 full_pay=reg_pay+ot_pay
 
 #print pay check
 print('Pay Date: '+ pay_date + '                          Employee Number: '+ str(emp_num))
 print('Pay Group: '+pay_group+'                             Check Type: '+check_type+'\n')
-print('Hours: '+str(hours)+'.................................Earnings: '+str(full_pay))
+print('Hours: '+str(hours)+'.................................Earnings: '+'$'+str(full_pay))
 
