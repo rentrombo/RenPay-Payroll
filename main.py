@@ -33,7 +33,7 @@ if hours<40:
 else:
     reg_pay= 800.00
     ot_pay = (hours-40)*30.00
-full_pay=reg_pay+ot_pay
+full_pay=round((reg_pay+ot_pay),2)
 
 #print pay check
 print('Pay Date: '+ pay_date + '                          Employee Number: '+ str(emp_num))
