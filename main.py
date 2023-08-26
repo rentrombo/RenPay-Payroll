@@ -58,7 +58,7 @@ while error == 0:
     else:
         error = 0
         print('Prior year pays are not valid')
-
+pay_date = str(pay_date)
 #input of employee number
 print('Enter the employee identifier number: ')
 emp_num = int(input())
