@@ -62,7 +62,10 @@ pay_date = str(pay_date)
 #input of employee number
 print('Enter the employee identifier number: ')
 emp_num = int(input())
-#input of pay group
+if len(str(emp_num)) > 6:
+    print('Invalid employee identification. Must be less than 6 characters')
+else:
+    valid_eeid = True
 print('Enter the code for pay group the employee is in: ')
 pay_group = input()
 #input of hours
