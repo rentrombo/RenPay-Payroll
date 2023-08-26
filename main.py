@@ -19,6 +19,8 @@ while error == 0:
     quarter_three_month = 9
     quarter_four_month = 12
 
+    current_quarter = 0
+
     month_diff = pay_month - today_month
     year_diff = pay_year - today_year
     day_diff = pay_day - today_day
@@ -26,12 +28,35 @@ while error == 0:
         if today_month > quarter_one_month:
             if today_month > quarter_two_month:
                 if today_month > quarter_three_month:
-                    if today_month > quarter_four_month:
-
+                    current_quarter += quarter_four_month
+                    if 10 <= pay_month <= 12:
+                        error += 1
+                    else:
+                        error += 0
+                else:
+                    current_quarter += quarter_three_month
+                    if 7 <= pay_month <= 9:
+                        error += 1
+                    else:
+                        error += 0
+            else:
+                current_quarter += quarter_two_month
+                if 4 <= pay_month <= 6:
+                    error += 1
+                else:
+                    error += 0
         else:
-            error += 0
-            print('Prior quarter pays are invalid')
+            current_quarter += quarter_one_month
+            if 1 <= pay_month <= 3:
+                error += 1
+            else:
+                error += 0
+    else:
+        error = 0
+        print('Prior year pays are not valid')
 
+    if current_quarter <= pay_month:
+            print(str(current_quarter) + str(pay_month))
     else:
         error = 0
         print('Prior year pays are not valid')
