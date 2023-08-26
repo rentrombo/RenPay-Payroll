@@ -33,33 +33,32 @@ while error == 0:
                         error += 1
                     else:
                         error += 0
+                        print('Prior or future quarter pays are not valid')
                 else:
                     current_quarter += quarter_three_month
                     if 7 <= pay_month <= 9:
                         error += 1
                     else:
                         error += 0
+                        print('Prior or future quarter pays are not valid')
             else:
                 current_quarter += quarter_two_month
                 if 4 <= pay_month <= 6:
                     error += 1
                 else:
                     error += 0
+                    print('Prior or future quarter pays are not valid')
         else:
             current_quarter += quarter_one_month
             if 1 <= pay_month <= 3:
                 error += 1
             else:
                 error += 0
+                print('Prior or future quarter pays are not valid')
     else:
         error = 0
         print('Prior year pays are not valid')
 
-    if current_quarter <= pay_month:
-            print(str(current_quarter) + str(pay_month))
-    else:
-        error = 0
-        print('Prior year pays are not valid')
 #input of employee number
 print('Enter the employee identifier number: ')
 emp_num = int(input())
